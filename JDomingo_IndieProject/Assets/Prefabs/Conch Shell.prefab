@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 5635607469987045386}
   - component: {fileID: 2902523608992923103}
   - component: {fileID: 8789391602093446109}
+  - component: {fileID: 5951097264896133056}
   m_Layer: 0
   m_Name: Conch Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8392548732883549602
 Transform:
   m_ObjectHideFlags: 0
@@ -97,3 +98,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5951097264896133056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5128127150572737180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97229dae4bb3d394b85c0a680d78d204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemScriptableObject: {fileID: 11400000, guid: 735092c4b082e5a4a9976b516386d688, type: 2}

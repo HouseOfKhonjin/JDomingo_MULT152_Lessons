@@ -346,7 +346,12 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/CameraAttach.cs"
+"Assets/Scripts/CameraClick.cs"
+"Assets/Scripts/ItemHold.cs"
+"Assets/Scripts/ItemSO.cs"
+"Assets/Scripts/PickUp.cs"
 "Assets/Scripts/PlayerCam.cs"
+"Assets/Scripts/PlayerInventory.cs"
 "Assets/Scripts/PlayerMovement.cs"
 -langversion:9.0
 

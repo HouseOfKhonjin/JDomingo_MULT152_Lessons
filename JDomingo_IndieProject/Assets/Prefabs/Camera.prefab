@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8208828104446182117}
   - component: {fileID: 8208828104446182118}
   - component: {fileID: 8208828104446182119}
-  - component: {fileID: 9067818698746936215}
+  - component: {fileID: 4395727568468839751}
+  - component: {fileID: 1696232026642401442}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -98,7 +99,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9067818698746936215
+--- !u!114 &4395727568468839751
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,8 +108,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 8208828104446182120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 256182e4390028b4a8456f14d0cce1b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 97229dae4bb3d394b85c0a680d78d204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  iconLabel: Camera
+  itemScriptableObject: {fileID: 11400000, guid: 363bc16a554c09f458d0c5dabe634b58, type: 2}
+--- !u!114 &1696232026642401442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8208828104446182120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141d5f01f3e96de42a3434d288237f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
