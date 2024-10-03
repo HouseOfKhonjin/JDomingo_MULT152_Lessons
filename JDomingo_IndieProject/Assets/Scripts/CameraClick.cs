@@ -15,7 +15,7 @@ public class CameraClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (camera_item.setActive(true))
+        if (NewItemSelected.camera_item.activeSelf == true)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {

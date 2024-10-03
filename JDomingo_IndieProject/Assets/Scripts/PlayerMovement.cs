@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        Debug.Log(Time.deltaTime);
+        //Debug.Log(Time.deltaTime);
         //Vector3.forward --> (0, 0, 1)
         // (0, 0, 1) * Time.DeltaTime = (0, 0, 0.016)
         transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);

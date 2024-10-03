@@ -14,14 +14,14 @@ public class PlayerInventory : MonoBehaviour
 
     [Space(20)]
     [Header("Item gameObjects")]
-    [SerializeField] GameObject camera_item;
-    [SerializeField] GameObject shovel_item;
-    [SerializeField] GameObject conchShell_item;
-    [SerializeField] GameObject photo_item;
-    [SerializeField] GameObject tablet1_item;
-    [SerializeField] GameObject tablet2_item;
-    [SerializeField] GameObject tablet3_item;
-    [SerializeField] GameObject tablet4_item;
+    [SerializeField] public GameObject camera_item;
+    [SerializeField] public GameObject shovel_item;
+    [SerializeField] public GameObject conchShell_item;
+    [SerializeField] public GameObject photo_item;
+    [SerializeField] public GameObject tablet1_item;
+    [SerializeField] public GameObject tablet2_item;
+    [SerializeField] public GameObject tablet3_item;
+    [SerializeField] public GameObject tablet4_item;
 
     private Dictionary<itemType, GameObject> itemSetActive = new Dictionary<itemType, GameObject>() { };
     
