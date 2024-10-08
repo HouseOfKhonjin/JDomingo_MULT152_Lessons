@@ -347,12 +347,14 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/CameraAttach.cs"
 "Assets/Scripts/CameraClick.cs"
+"Assets/Scripts/ConchNoise.cs"
 "Assets/Scripts/ItemHold.cs"
 "Assets/Scripts/ItemSO.cs"
 "Assets/Scripts/PickUp.cs"
 "Assets/Scripts/PlayerCam.cs"
 "Assets/Scripts/PlayerInventory.cs"
 "Assets/Scripts/PlayerMovement.cs"
+"Assets/Scripts/ShovelDig.cs"
 -langversion:9.0
 
 /deterministic
