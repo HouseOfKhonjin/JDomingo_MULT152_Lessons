@@ -7,6 +7,7 @@ public class PlayerInventory : MonoBehaviour
     [Header("General")]
     public List<itemType> inventoryList;
     public int selectedItem;
+    public float playerReach;
 
     [Space(20)]
     [Header("Keys")]
@@ -22,6 +23,8 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] public GameObject tablet2_item;
     [SerializeField] public GameObject tablet3_item;
     [SerializeField] public GameObject tablet4_item;
+
+    [SerializeField] Camera cam;
 
     private Dictionary<itemType, GameObject> itemSetActive = new Dictionary<itemType, GameObject>() { };
     
@@ -41,6 +44,20 @@ public class PlayerInventory : MonoBehaviour
 
     void Update()
     {
+        //Items Pickup
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hitInfo;
+        
+        if(Physics.Raycast(ray, out hitInfo, playerReach) && Input.GetKey(pickItemKey))
+        {
+            IPickable item = hitInfo.collider.GetComponent<IPickable>();
+            if (item != null)
+            {
+                inventoryList.Add(hitInfo.collider.GetComponent<ItemPickable>().itemScriptableObject.item_type);
+                item.PickItem();
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.Alpha1)  && inventoryList.Count > 0)
         {
             selectedItem = 0;
@@ -97,5 +114,11 @@ public class PlayerInventory : MonoBehaviour
         GameObject selectedItemGameObject = itemSetActive[inventoryList[selectedItem]];
         selectedItemGameObject.SetActive(true);
     }
+}
+
+public interface IPickable
+{
+    
+    void PickItem();
 }
 // video used: https://www.youtube.com/watch?v=HGol5qhqjOE

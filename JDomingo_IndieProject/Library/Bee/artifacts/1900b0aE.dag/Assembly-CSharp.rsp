@@ -349,6 +349,7 @@
 "Assets/Scripts/CameraClick.cs"
 "Assets/Scripts/ConchNoise.cs"
 "Assets/Scripts/ItemHold.cs"
+"Assets/Scripts/ItemPickable.cs"
 "Assets/Scripts/ItemSO.cs"
 "Assets/Scripts/PickUp.cs"
 "Assets/Scripts/PlayerCam.cs"
