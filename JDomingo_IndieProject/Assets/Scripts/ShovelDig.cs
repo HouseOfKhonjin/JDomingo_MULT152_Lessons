@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class ShovelDig : MonoBehaviour
@@ -17,8 +18,9 @@ public class ShovelDig : MonoBehaviour
     {
         if (NewItemSelected.shovel_item.activeSelf == true)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) && OnTriggerEnter(Collider other))
             {
+                Destroy(other.gameObject);
                 Debug.Log("DIGGED!");
             }
         }
