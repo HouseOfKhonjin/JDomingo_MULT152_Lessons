@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShovelDig : MonoBehaviour
 {
     public PlayerInventory NewItemSelected;
+    public bool hasEntered;
 
     // Start is called before the first frame update
     void Start()
@@ -12,13 +13,29 @@ public class ShovelDig : MonoBehaviour
 
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Enter Trigger");
+        hasEntered = true;
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        Debug.Log("Exit Trigger");
+        hasEntered = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(NewItemSelected.shovel_item.activeSelf == true);
         if (NewItemSelected.shovel_item.activeSelf == true)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            //Debug.Log(Input.GetKeyDown(KeyCode.Mouse0) + ", " + hasEntered);
+            
+            if (Input.GetKeyDown(KeyCode.Mouse0) && hasEntered)
             {
+                Destroy(gameObject);
                 Debug.Log("DIGGED!");
             }
         }
