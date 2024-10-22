@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -24,7 +25,14 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] public GameObject tablet3_item;
     [SerializeField] public GameObject tablet4_item;
 
+    [Space(20)]
+    [Header("UI")]
+    [SerializeField] Image[] inventorySlotImage = new Image[8];
+    [SerializeField] Image[] inventoryBackgroundImage = new Image[8];
+    [SerializeField] Sprite emptySlotSprite;
+
     [SerializeField] Camera cam;
+    [SerializeField] GameObject pickUpItem_gameObject;
 
     private Dictionary<itemType, GameObject> itemSetActive = new Dictionary<itemType, GameObject>() { };
     
@@ -48,13 +56,38 @@ public class PlayerInventory : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitInfo;
         
-        if(Physics.Raycast(ray, out hitInfo, playerReach) && Input.GetKey(pickItemKey))
+        if(Physics.Raycast(ray, out hitInfo, playerReach))
         {
             IPickable item = hitInfo.collider.GetComponent<IPickable>();
             if (item != null)
             {
-                inventoryList.Add(hitInfo.collider.GetComponent<ItemPickable>().itemScriptableObject.item_type);
-                item.PickItem();
+                pickUpItem_gameObject.SetActive(true);
+                if (Input.GetKey(pickItemKey))
+                {
+                    inventoryList.Add(hitInfo.collider.GetComponent<ItemPickable>().itemScriptableObject.item_type);
+                    item.PickItem();
+                }
+                else
+                {
+                    pickUpItem_gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                pickUpItem_gameObject.SetActive(false);
+            }
+        }
+        // UI
+
+        for (int i = 0; i <8; i++)
+        {
+            if (i < inventoryList.Count)
+            {
+                inventorySlotImage[i].sprite = itemSetActive[inventoryList[i]].GetComponent<Item>().itemScriptableObject.item_sprite;
+            }
+            else
+            {
+                inventorySlotImage[i].sprite = emptySlotSprite;
             }
         }
 
