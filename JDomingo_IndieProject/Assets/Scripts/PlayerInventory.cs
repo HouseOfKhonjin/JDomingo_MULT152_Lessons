@@ -52,11 +52,25 @@ public class PlayerInventory : MonoBehaviour
 
     void Update()
     {
+        // UI
+
+        for (int i = 0; i <8; i++)
+        {
+            if (i < inventoryList.Count)
+            {
+                inventorySlotImage[i].sprite = itemSetActive[inventoryList[i]].GetComponent<ItemHold>().itemScriptableObject.item_sprite;
+            }
+            else
+            {
+                inventorySlotImage[i].sprite = emptySlotSprite;
+            }
+        }
+
         //Items Pickup
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitInfo;
-        
-        if(Physics.Raycast(ray, out hitInfo, playerReach))
+
+        if (Physics.Raycast(ray, out hitInfo, playerReach))
         {
             IPickable item = hitInfo.collider.GetComponent<IPickable>();
             if (item != null)
@@ -75,19 +89,6 @@ public class PlayerInventory : MonoBehaviour
             else
             {
                 pickUpItem_gameObject.SetActive(false);
-            }
-        }
-        // UI
-
-        for (int i = 0; i <8; i++)
-        {
-            if (i < inventoryList.Count)
-            {
-                inventorySlotImage[i].sprite = itemSetActive[inventoryList[i]].GetComponent<Item>().itemScriptableObject.item_sprite;
-            }
-            else
-            {
-                inventorySlotImage[i].sprite = emptySlotSprite;
             }
         }
 
@@ -151,7 +152,6 @@ public class PlayerInventory : MonoBehaviour
 
 public interface IPickable
 {
-    
     void PickItem();
 }
 // video used: https://www.youtube.com/watch?v=HGol5qhqjOE
