@@ -8,8 +8,6 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 15.0f;
     //public float turnSpeed = 15.0f;
 
-    public Transform orientation;
-
     private float horizontalInput;
     float verticalInput;
     // Start is called before the first frame update

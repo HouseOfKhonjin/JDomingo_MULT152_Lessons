@@ -78,7 +78,7 @@ public class PlayerInventory : MonoBehaviour
                 pickUpItem_gameObject.SetActive(true);
                 if (Input.GetKey(pickItemKey))
                 {
-                    inventoryList.Add(hitInfo.collider.GetComponent<ItemPickable>().itemScriptableObject.item_type);
+                    inventoryList.Add(hitInfo.collider.GetComponent<ItemHold>().itemScriptableObject.item_type);
                     item.PickItem();
                 }
                 else
@@ -96,11 +96,13 @@ public class PlayerInventory : MonoBehaviour
         {
             selectedItem = 0;
             NewItemSelected();
+            Debug.Log("Slot 1 selected");
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2) && inventoryList.Count > 1)
         {
             selectedItem = 1;
             NewItemSelected();
+            Debug.Log("Slot 2 selected");
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3) && inventoryList.Count > 2)
         {
@@ -154,4 +156,4 @@ public interface IPickable
 {
     void PickItem();
 }
-// video used: https://www.youtube.com/watch?v=HGol5qhqjOE
+// videos used: https://www.youtube.com/watch?v=HGol5qhqjOE , https://www.youtube.com/watch?v=Josw0x2geuQ
