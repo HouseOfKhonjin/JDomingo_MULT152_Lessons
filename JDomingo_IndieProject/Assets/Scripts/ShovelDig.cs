@@ -28,10 +28,10 @@ public class ShovelDig : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(NewItemSelected.shovel_item.activeSelf == true);
+        // Debug.Log(NewItemSelected.shovel_item.activeSelf == true);
         if (NewItemSelected.shovel_item.activeSelf == true)
         {
-            //Debug.Log(Input.GetKeyDown(KeyCode.Mouse0) + ", " + hasEntered);
+            Debug.Log(Input.GetKeyDown(KeyCode.Mouse0) + ", " + hasEntered);
             
             if (Input.GetKeyDown(KeyCode.Mouse0) && hasEntered)
             {
