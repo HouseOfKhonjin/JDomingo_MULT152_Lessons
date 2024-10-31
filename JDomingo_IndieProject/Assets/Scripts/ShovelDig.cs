@@ -15,14 +15,22 @@ public class ShovelDig : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Enter Trigger");
-        hasEntered = true;
+        if (other.CompareTag("Shovel"))
+        {
+            Debug.Log("Enter Trigger");
+            hasEntered = true;
+        }
+        
     }
 
     void OnTriggerExit(Collider other)
     {
-        Debug.Log("Exit Trigger");
-        hasEntered = false;
+        if (other.CompareTag("Shovel"))
+        {
+            Debug.Log("Exit Trigger");
+            hasEntered = false;
+        }
+           
     }
 
     // Update is called once per frame
