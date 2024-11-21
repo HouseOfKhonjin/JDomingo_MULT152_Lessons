@@ -6,7 +6,7 @@ public class CameraClick : MonoBehaviour
 {
     public PlayerInventory NewItemSelected;
     public bool hasEntered;
-
+    public FollowPlayer FPScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +43,7 @@ public class CameraClick : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Mouse0) && hasEntered)
             {
                 Debug.Log("CLICK!");
+                FPScript.heardNoise = true;
             }
         }
 
