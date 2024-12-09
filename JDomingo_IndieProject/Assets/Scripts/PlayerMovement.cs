@@ -10,10 +10,11 @@ public class PlayerMovement : MonoBehaviour
 
     private float horizontalInput;
     float verticalInput;
+    public Rigidbody rigidbody;
     // Start is called before the first frame update
     void Start()
     {
-
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -24,9 +25,19 @@ public class PlayerMovement : MonoBehaviour
 
         //Debug.Log(Time.deltaTime);
         //Vector3.forward --> (0, 0, 1)
+        //rigidbody.velocity = Vector3.zero;
+        //rigidbody.angularVelocity = Vector3.zero;
+        //rigidbody.inertiaTensor = Vector3.zero;
         // (0, 0, 1) * Time.DeltaTime = (0, 0, 0.016)
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);
+
+
+        // if (verticalInput != 0 && horizontalInput != 0){
+        //   rigidbody.constraints = RigidbodyConstraints.FreezePosition;
+        // }
+
+
+        transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput + Vector3.right * Time.deltaTime * speed * horizontalInput);
         // turns
-        transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
+        // transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
     }
 }

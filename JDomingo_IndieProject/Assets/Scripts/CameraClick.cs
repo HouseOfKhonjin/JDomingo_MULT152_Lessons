@@ -36,20 +36,20 @@ public class CameraClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (NewItemSelected.camera_item.activeSelf == true)
-        {
-            Debug.Log(Input.GetKeyDown(KeyCode.Mouse0) + ", " + hasEntered);
+        //if (NewItemSelected.camera_item.activeSelf == true)
+        //{
+          //  Debug.Log(Input.GetKeyDown(KeyCode.Mouse0) + ", " + hasEntered);
+          
+          //  if (Input.GetKeyDown(KeyCode.Mouse0) && hasEntered)
+            //{
+              //  Debug.Log("CLICK!");
+               // FPScript.heardNoise = true;
+            //}
+        //}
 
-            if (Input.GetKeyDown(KeyCode.Mouse0) && hasEntered)
-            {
-                Debug.Log("CLICK!");
-                FPScript.heardNoise = true;
-            }
-        }
-
-        else
-        {
-            return;
-        }
+        //else
+        //{
+          //  return;
+        //}
     }
 }
